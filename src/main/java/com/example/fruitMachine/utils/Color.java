@@ -1,4 +1,4 @@
-package com.example.BIT_EXAM.utils;
+package com.example.fruitMachine.utils;
 
 public enum Color {
     BLACK("black"),
@@ -12,7 +12,4 @@ public enum Color {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
-    }
 }

@@ -1,11 +1,11 @@
-package com.example.BIT_EXAM.utils;
+package com.example.fruitMachine.utils;
 
 import java.util.*;
 
 public class FruitMachine {
 
-    private static Map<String, Player> players = new HashMap<>();
-    private static Random random = new Random();
+    private static final Map<String, Player> players = new HashMap<>();
+    private static final Random random = new Random();
 
     public static Map<String, Object> play(String playerName, int bet) {
         if (playerName == null || playerName.trim().isEmpty()) {

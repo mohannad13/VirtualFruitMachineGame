@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>VirtualFruitMachine</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>BIT_EXAM</name>
+	<name>FruitMachine</name>
 	<description>bit exam sol</description>
 	<properties>
 		<java.version>17</java.version>

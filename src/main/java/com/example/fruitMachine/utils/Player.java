@@ -1,7 +1,7 @@
-package com.example.BIT_EXAM.utils;
+package com.example.fruitMachine.utils;
 
 public class Player {
-    private String name;
+    private final String name;
     private int balance;
 
     public Player(String name, int balance) {
@@ -9,9 +9,6 @@ public class Player {
         this.balance = balance;
     }
 
-    public String getName() {
-        return name;
-    }
 
     public int getBalance() {
         return balance;

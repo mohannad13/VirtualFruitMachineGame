@@ -1,4 +1,4 @@
-package com.example.BIT_EXAM;
+package com.example.fruitMachine;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

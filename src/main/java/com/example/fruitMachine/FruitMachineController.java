@@ -1,6 +1,6 @@
-package com.example.BIT_EXAM;
+package com.example.fruitMachine;
 
-import com.example.BIT_EXAM.utils.FruitMachine;
+import com.example.fruitMachine.utils.FruitMachine;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

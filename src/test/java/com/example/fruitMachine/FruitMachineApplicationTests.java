@@ -1,4 +1,4 @@
-package com.example.BIT_EXAM;
+package com.example.fruitMachine;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
