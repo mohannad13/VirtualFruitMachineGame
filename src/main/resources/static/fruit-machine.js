@@ -10,22 +10,23 @@ if (!playerName || !betAmount) {
     alert("Player name and bet amount are required");
     return;
 }
-
 fetch("/fruit-machine/play?player=" + playerName + "&bet=" + betAmount)
     .then(response => {
         if (!response.ok) {
-            throw new Error("Failed to play fruit machine");
+            return response.json().then(err => {
+                throw new Error(err.error);
+            });
         }
         return response.json();
     })
     .then(data => {
         let winMessage = '';
-        if(data.colors.length === 4 && new Set(data.colors).size === 1){
+        if(data.selectedColors.length === 4 && new Set(data.selectedColors).size === 1){
             winMessage = "WOW! congratulations!! You won!";
         }else{
             winMessage = "You lost.";
         }
-        resultDiv.innerHTML = winMessage + "<br>Colors: " + data.colors.join(", ") + "<br>Balance: " + data.balance;
+        resultDiv.innerHTML = winMessage + "<br>Colors: " + data.selectedColors.join(", ") + "<br>Balance: " + data.balance;
     })
     .catch(error => {
         alert(error.message);

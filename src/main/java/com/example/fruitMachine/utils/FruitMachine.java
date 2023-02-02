@@ -21,10 +21,6 @@ public class FruitMachine {
         this.moneyBox = moneyBox;
     }
 
-    public int getMoneyBox() {
-        return moneyBox;
-    }
-
     /**
      * Constructor for FruitMachine class.
      * Initializes the moneyBox to 0.
@@ -64,6 +60,9 @@ public class FruitMachine {
     private void validateInput(String playerName, int bet) {
         if (playerName == null || playerName.trim().isEmpty()) {
             throw new IllegalArgumentException("Player name must not be empty or null");
+        }
+        if (!playerName.matches("^[a-zA-Z]+$")) {
+            throw new IllegalArgumentException("Player name must contain only alphabetic characters");
         }
         if (bet <= 0) {
             throw new IllegalArgumentException("Bet amount must be a positive number");
