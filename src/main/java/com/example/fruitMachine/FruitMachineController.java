@@ -15,11 +15,17 @@ import java.util.Map;
 @RequestMapping("/fruit-machine")
 public class FruitMachineController {
 
+    private FruitMachine fruitMachine;
+
+    public FruitMachineController() {
+        fruitMachine = new FruitMachine();
+    }
+
     @GetMapping("/play")
     public ResponseEntity<Map<String, Object>> play(@RequestParam("player") String playerName,
                                                     @RequestParam("bet") int bet) {
         try {
-            Map<String, Object> response = FruitMachine.play(playerName, bet);
+            Map<String, Object> response = fruitMachine.play(playerName, bet);
             return ResponseEntity.ok(response);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(Collections.singletonMap("error", e.getMessage()));
