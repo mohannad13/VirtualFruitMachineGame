@@ -8,8 +8,8 @@ import com.example.fruitMachine.utils.FruitMachine;
 import org.junit.jupiter.api.Test;
 
 public class FruitMachineTest {
-    private FruitMachine fruitMachine = new FruitMachine();
-    private String playerName = "player1";
+    private final FruitMachine fruitMachine = new FruitMachine();
+    private final String playerName = "player";
 
     @Test
     public void testPlayValidInputReturnsColorsAndUpdatedBalance() {

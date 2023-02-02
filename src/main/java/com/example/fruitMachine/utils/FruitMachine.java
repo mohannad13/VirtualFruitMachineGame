@@ -21,6 +21,10 @@ public class FruitMachine {
         this.moneyBox = moneyBox;
     }
 
+    public int getMoneyBox() {
+        return moneyBox;
+    }
+
     /**
      * Constructor for FruitMachine class.
      * Initializes the moneyBox to 0.
