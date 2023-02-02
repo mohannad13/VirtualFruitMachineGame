@@ -148,7 +148,7 @@ public class FruitMachine {
      */
     private Map<String, Object> createResponse(List<Color> selectedColors, int balance) {
         Map<String, Object> response = new HashMap<>();
-        response.put("colors", selectedColors);
+        response.put("selectedColors", selectedColors);
         response.put("balance", balance);
         return response;
     }

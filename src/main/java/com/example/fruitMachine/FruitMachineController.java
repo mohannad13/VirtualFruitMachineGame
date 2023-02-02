@@ -21,6 +21,10 @@ public class FruitMachineController {
         fruitMachine = new FruitMachine();
     }
 
+    public FruitMachineController(FruitMachine fruitMachine) {
+        this.fruitMachine = fruitMachine;
+    }
+
     @GetMapping("/play")
     public ResponseEntity<Map<String, Object>> play(@RequestParam("player") String playerName,
                                                     @RequestParam("bet") int bet) {
