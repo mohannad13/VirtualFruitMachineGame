@@ -17,6 +17,14 @@ public class FruitMachine {
 
     private int moneyBox;  // money box to store the money lost in each game
 
+    public void setMoneyBox(int moneyBox) {
+        this.moneyBox = moneyBox;
+    }
+
+    public int getMoneyBox() {
+        return moneyBox;
+    }
+
     /**
      * Constructor for FruitMachine class.
      * Initializes the moneyBox to 0.

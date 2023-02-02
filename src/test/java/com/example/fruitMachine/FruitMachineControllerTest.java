@@ -1,8 +1,12 @@
 package com.example.fruitMachine;
+
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
+
 import java.util.HashMap;
 import java.util.Map;
+
 import com.example.fruitMachine.utils.FruitMachine;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +14,8 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.ResponseEntity;
+
+import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
 public class FruitMachineControllerTest {
@@ -22,6 +28,22 @@ public class FruitMachineControllerTest {
     @Before
     public void setUp() {
         fruitMachineController = new FruitMachineController(fruitMachine);
+    }
+
+
+    @Test
+    public void testFruitMachineController_defaultConstructor() {
+        FruitMachineController controller = new FruitMachineController();
+        assertNotNull(controller.getFruitMachine());
+    }
+
+    @Test
+    public void testSetAndGetMoneyBox() {
+        FruitMachine fruitMachine = new FruitMachine();
+        fruitMachine.setMoneyBox(100);
+        int expectedMoneyBox = 100;
+        int actualMoneyBox = fruitMachine.getMoneyBox();
+        assertEquals(expectedMoneyBox, actualMoneyBox);
     }
 
     @Test
