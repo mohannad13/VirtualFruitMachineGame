@@ -12,6 +12,11 @@ import java.util.Random;
  */
 public class FruitMachine {
 
+    private static final String NAME_REGEX = "^[a-zA-Z]+$";
+    public static final String SELECTED_COLORS = "selectedColors";
+    public static final String BALANCE = "balance";
+    private static final int STARTING_BALANCE = 1000;
+    private static final int NUM_COLORS = 4;
     private final Map<String, Player> players = new HashMap<>();  // map to store the players and their balances
     private final Random random = new Random();  // random number generator
 
@@ -65,7 +70,7 @@ public class FruitMachine {
         if (playerName == null || playerName.trim().isEmpty()) {
             throw new IllegalArgumentException("Player name must not be empty or null");
         }
-        if (!playerName.matches("^[a-zA-Z]+$")) {
+        if (!playerName.matches(NAME_REGEX)) {
             throw new IllegalArgumentException("Player name must contain only alphabetic characters");
         }
         if (bet <= 0) {
@@ -81,7 +86,7 @@ public class FruitMachine {
      * @return the player with the given name
      */
     private Player getOrCreatePlayer(String playerName) {
-        return players.computeIfAbsent(playerName, k -> new Player(playerName, 1000));
+        return players.computeIfAbsent(playerName, k -> new Player(playerName, STARTING_BALANCE));
     }
 
     /**
@@ -98,13 +103,13 @@ public class FruitMachine {
     }
 
     /**
-     * Selects 4 random colors from the possible Color values.
+     * Selects NUM_COLORS random colors from the possible Color values.
      *
-     * @return A List of 4 selected Color values
+     * @return A List of NUM_COLORS selected Color values
      */
     private List<Color> selectColors() {
         List<Color> selectedColors = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < NUM_COLORS; i++) {
             int index = random.nextInt(Color.values().length);
             selectedColors.add(Color.values()[index]);
         }
@@ -159,8 +164,8 @@ public class FruitMachine {
      */
     private Map<String, Object> createResponse(List<Color> selectedColors, int balance) {
         Map<String, Object> response = new HashMap<>();
-        response.put("selectedColors", selectedColors);
-        response.put("balance", balance);
+        response.put(SELECTED_COLORS, selectedColors);
+        response.put(BALANCE, balance);
         return response;
     }
 }

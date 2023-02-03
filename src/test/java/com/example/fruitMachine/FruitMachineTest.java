@@ -1,5 +1,7 @@
 package com.example.fruitMachine;
 
+import static com.example.fruitMachine.utils.FruitMachine.BALANCE;
+import static com.example.fruitMachine.utils.FruitMachine.SELECTED_COLORS;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Map;
@@ -14,8 +16,8 @@ public class FruitMachineTest {
     @Test
     public void testPlayValidInputReturnsColorsAndUpdatedBalance() {
         Map<String, Object> result = fruitMachine.play(playerName, 100);
-        assertNotNull(result.get("selectedColors"));
-        assertNotNull(result.get("balance"));
+        assertNotNull(result.get(SELECTED_COLORS));
+        assertNotNull(result.get(BALANCE));
     }
 
     @Test
@@ -37,8 +39,8 @@ public class FruitMachineTest {
 
     @Test
     public void testPlayMultiplePlaysReturnsUpdatedBalance() {
-        int initialBalance = (int) fruitMachine.play(playerName, 100).get("balance");
-        int updatedBalance = (int) fruitMachine.play(playerName, 200).get("balance");
+        int initialBalance = (int) fruitMachine.play(playerName, 100).get(BALANCE);
+        int updatedBalance = (int) fruitMachine.play(playerName, 200).get(BALANCE);
         assertNotEquals(initialBalance, updatedBalance);
     }
 }
