@@ -1,12 +1,12 @@
 package com.example.fruitMachine;
 
-import static com.example.fruitMachine.utils.FruitMachine.BALANCE;
-import static com.example.fruitMachine.utils.FruitMachine.SELECTED_COLORS;
+import static com.example.fruitMachine.gameLogic.FruitMachine.BALANCE;
+import static com.example.fruitMachine.gameLogic.FruitMachine.SELECTED_COLORS;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Map;
 
-import com.example.fruitMachine.utils.FruitMachine;
+import com.example.fruitMachine.gameLogic.FruitMachine;
 import org.junit.jupiter.api.Test;
 
 public class FruitMachineTest {

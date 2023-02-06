@@ -1,5 +1,6 @@
 package com.example.fruitMachine.utils;
 
+import com.example.fruitMachine.gameLogic.Player;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

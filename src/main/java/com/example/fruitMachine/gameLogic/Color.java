@@ -1,4 +1,4 @@
-package com.example.fruitMachine.utils;
+package com.example.fruitMachine.gameLogic;
 
 public enum Color {
     BLACK("black"),

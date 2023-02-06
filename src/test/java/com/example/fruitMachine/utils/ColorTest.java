@@ -1,5 +1,6 @@
 package com.example.fruitMachine.utils;
 
+import com.example.fruitMachine.gameLogic.Color;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

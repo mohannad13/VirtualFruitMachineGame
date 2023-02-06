@@ -1,4 +1,4 @@
-package com.example.fruitMachine.utils;
+package com.example.fruitMachine.gameLogic;
 
 import java.util.ArrayList;
 import java.util.HashMap;

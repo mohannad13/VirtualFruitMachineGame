@@ -7,7 +7,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.Map;
 
-import com.example.fruitMachine.utils.FruitMachine;
+import com.example.fruitMachine.gameLogic.FruitMachine;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
